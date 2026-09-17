@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>115學年度 三年23班班親會｜班級公費與第八節點心</title>
   <style>
     :root {
@@ -14,22 +14,18 @@
       --navy-700: #1E4570;
       --navy-600: #2C5A8C;
       --blue-gray: #7C93B3;
-      --ink: #0F2038;
-      /* 白卡片上的深色文字 */
-      --ink-light: #EAF1FB;
-      /* 深色背景上的淺色文字（標題） */
-      --ink-soft: #9FB4D1;
-      /* 深色背景上的次要文字 */
-      --muted: #5A6E8C;
-      /* 白卡片上的次要文字 */
+      --ink: #0F2038;         /* 白卡片上的深色文字 */
+      --ink-light: #EAF1FB;   /* 深色背景上的淺色文字（標題） */
+      --ink-soft: #9FB4D1;    /* 深色背景上的次要文字 */
+      --muted: #5A6E8C;       /* 白卡片上的次要文字 */
       --paper: #0A1830;
       --panel: #EAF1FB;
       --line: #DCE3EC;
       --green: #2C5A8C;
       --amber: #F2A93B;
       --amber-deep: #D98A1E;
-      --amber-soft: rgba(242, 169, 59, 0.16);
-      --amber-soft-border: rgba(242, 169, 59, 0.5);
+      --amber-soft: rgba(242,169,59,0.16);
+      --amber-soft-border: rgba(242,169,59,0.5);
       --white: #FFFFFF;
       --radius: 18px;
     }
@@ -49,7 +45,7 @@
     body {
       font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", system-ui, -apple-system, "BlinkMacSystemFont", sans-serif;
       background:
-        radial-gradient(circle at 88% -6%, rgba(60, 110, 170, 0.35), transparent 42%),
+        radial-gradient(circle at 88% -6%, rgba(60,110,170,0.35), transparent 42%),
         linear-gradient(160deg, var(--navy-900) 0%, var(--navy-950) 70%);
       color: var(--ink-light);
       line-height: 1.65;
@@ -58,95 +54,37 @@
     }
 
     /* ============ PLATFORM TOPBAR (共用導覽列) ============ */
-    .platform-topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 44px;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 0 20px;
-      background: linear-gradient(180deg, #0E2141, #0A1830);
-      border-bottom: 1px solid rgba(242, 169, 59, 0.35);
-      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    .platform-topbar{
+      position:fixed;top:0;left:0;right:0;height:44px;z-index:99999;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:0 20px;
+      background:linear-gradient(180deg,#0E2141,#0A1830);
+      border-bottom:1px solid rgba(242,169,59,0.35);
+      font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+      box-shadow:0 2px 10px rgba(0,0,0,0.35);
     }
-
-    .platform-topbar .ptb-brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #F2A93B;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: .5px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .platform-topbar .ptb-brand{
+      display:flex;align-items:center;gap:8px;color:#F2A93B;font-weight:800;
+      font-size:14px;letter-spacing:.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     }
-
-    .platform-topbar .ptb-brand .ptb-logo {
-      font-size: 16px;
+    .platform-topbar .ptb-brand .ptb-logo{font-size:16px;}
+    .platform-topbar .ptb-links{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}
+    .platform-topbar .ptb-links::-webkit-scrollbar{display:none;}
+    .platform-topbar a.ptb-link{
+      flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;
+      color:#C7D2E6;text-decoration:none;font-size:12.5px;font-weight:700;
+      padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);transition:all .2s ease;white-space:nowrap;
     }
-
-    .platform-topbar .ptb-links {
-      display: flex;
-      gap: 6px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .platform-topbar .ptb-links::-webkit-scrollbar {
-      display: none;
-    }
-
-    .platform-topbar a.ptb-link {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: #C7D2E6;
-      text-decoration: none;
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.04);
-      transition: all .2s ease;
-      white-space: nowrap;
-    }
-
-    .platform-topbar a.ptb-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-
-    .platform-topbar a.ptb-link.active {
-      background: #F2A93B;
-      border-color: #F2A93B;
-      color: #0A1830;
-    }
-
-    :fullscreen .platform-topbar,
-    :-webkit-full-screen .platform-topbar {
-      display: none !important;
-    }
-
-    :fullscreen .deck,
-    :-webkit-full-screen .deck {
-      margin-top: 0 !important;
-      height: 100dvh !important;
-    }
-
-    :fullscreen .rail,
-    :-webkit-full-screen .rail {
-      top: 0 !important;
+    .platform-topbar a.ptb-link:hover{background:rgba(255,255,255,0.1);color:#fff;}
+    .platform-topbar a.ptb-link.active{background:#F2A93B;border-color:#F2A93B;color:#0A1830;}
+    :fullscreen .platform-topbar,:-webkit-full-screen .platform-topbar{display:none !important;}
+    :fullscreen .deck,:-webkit-full-screen .deck{margin-top:0 !important;height:100dvh !important;}
+    :fullscreen .rail,:-webkit-full-screen .rail{top:0 !important;}
+    @media (max-width:820px){
+      .platform-topbar{height:auto;flex-wrap:wrap;padding:8px 12px;gap:8px;}
+      .platform-topbar .ptb-brand{font-size:12px;}
+      .platform-topbar a.ptb-link{font-size:11px;padding:5px 10px;}
     }
 
     /* ---------- 進度列 ---------- */
@@ -164,9 +102,8 @@
 
     .rail span {
       flex: 1;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255,255,255,0.15);
       border-radius: 0 0 3px 3px;
-      transition: background 0.3s ease;
     }
 
     .rail span.done {
@@ -246,14 +183,13 @@
       background: linear-gradient(to top, var(--amber-soft) 45%, transparent 45%);
       padding: 0 0.3rem;
       line-height: 1.4;
-      max-width: 100%;
     }
 
     .note {
       margin-top: 1.2rem;
       font-size: 1rem;
       color: var(--ink-soft);
-      border-left: 4px solid rgba(255, 255, 255, 0.25);
+      border-left: 4px solid rgba(255,255,255,0.25);
       padding-left: 0.8rem;
       max-width: 36em;
     }
@@ -273,7 +209,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 1.2rem 1.2rem;
-      box-shadow: 0 8px 20px rgba(6, 16, 34, 0.28);
+      box-shadow: 0 8px 20px rgba(6,16,34,0.28);
     }
 
     .card .ico {
@@ -337,7 +273,7 @@
       font-weight: 700;
       display: flex;
       align-items: center;
-      box-shadow: 0 4px 14px rgba(6, 16, 34, 0.22);
+      box-shadow: 0 4px 14px rgba(6,16,34,0.22);
     }
 
     .step.last {
@@ -369,7 +305,7 @@
       padding: 0.8rem 1.2rem;
       font-size: 1.15rem;
       max-width: 38em;
-      box-shadow: 0 4px 14px rgba(6, 16, 34, 0.22);
+      box-shadow: 0 4px 14px rgba(6,16,34,0.22);
     }
 
     .vrow.key {
@@ -432,7 +368,7 @@
       font-size: 1.2rem;
       padding: .6rem 0 .6rem 1.8rem;
       position: relative;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+      border-bottom: 1px dashed rgba(255,255,255,0.18);
       max-width: 38em;
       color: var(--ink-light);
     }
@@ -475,7 +411,7 @@
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--amber);
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 1px solid rgba(255,255,255,0.18);
       padding-top: 1rem;
       display: inline-block;
     }
@@ -511,8 +447,8 @@
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--ink-light);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.22);
       border-radius: 999px;
       padding: .45rem 1.1rem;
       cursor: pointer;
@@ -520,7 +456,7 @@
     }
 
     button:hover {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255,255,255,0.14);
     }
 
     button:disabled {
@@ -541,165 +477,49 @@
       font-variant-numeric: tabular-nums;
     }
 
-    @media (max-width: 1024px) {
-
-      /* 頂部導覽列改為兩行並確保寬度完整 */
-      .platform-topbar {
-        height: auto;
-        flex-direction: column;
-        padding: 12px 16px;
-        gap: 12px;
-      }
-
-      .platform-topbar .ptb-brand {
-        width: 100%;
-        justify-content: center;
-        font-size: 13px;
-      }
-
-      .platform-topbar .ptb-links {
-        width: 100%;
-        justify-content: flex-start;
-        padding-bottom: 4px;
-      }
-
-      .platform-topbar a.ptb-link {
-        font-size: 11.5px;
-        padding: 6px 12px;
-      }
-
-      /* 將原本 fixed/absolute 的幻燈片切換邏輯，改為原生垂直滑動 (Scroll Snap) */
-      .rail {
-        top: 94px;
-      }
-
-      .deck {
-        margin-top: 94px;
-        height: calc(100dvh - 94px);
-        overflow-y: auto;
-        overflow-x: hidden;
-        scroll-snap-type: y proximity;
-        /* 允許段落吸附 */
-      }
-
+    @media (max-width:900px) {
       .slide {
-        position: relative;
-        display: flex !important;
-        /* 強制覆蓋原本的 display: none */
-        min-height: calc(100dvh - 94px);
-        height: auto;
-        scroll-snap-align: start;
-        padding: 3rem 1.5rem 6.5rem;
-        /* 預留底部按鈕空間 */
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      /* 元件微調適應窄版 */
-      h1 {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-      }
-
-      p,
-      .lead {
-        font-size: 1.15rem;
-      }
-
-      .stress {
-        display: inline;
-        /* 確保多行畫重點效果自然 */
-        line-height: 1.55;
-        padding: 0.1rem 0;
-      }
-
-      .cards {
-        flex-direction: column;
-      }
-
-      .card,
-      .topic {
-        flex: 1 1 100%;
-        padding: 1.2rem 1.4rem;
+        padding: 2.2rem 1.2rem 5rem;
       }
 
       .flow {
         flex-direction: column;
-        align-items: stretch;
-        gap: 0.8rem;
       }
 
       .arrow {
+        justify-content: flex-start;
+        padding-left: 1.2rem;
         transform: rotate(90deg);
-        justify-content: center;
-        padding: 0;
-        margin: -0.2rem 0;
-      }
-
-      .vrow {
-        font-size: 1.1rem;
-        padding: 0.8rem 1rem;
-      }
-
-      .vdown {
-        margin-left: 1.4rem;
-      }
-
-      ul.plain li {
-        padding-left: 1.4rem;
-        font-size: 1.1rem;
-      }
-
-      ul.plain li::before {
-        left: 0;
-        top: 1.15rem;
+        margin: 0.2rem 0;
       }
 
       .bar .who {
         display: none;
       }
-
-      .bar {
-        justify-content: center;
-      }
-
-      /* 隱藏左側文字後置中控制列 */
     }
 
     @media print {
 
       .bar,
-      .rail,
-      .platform-topbar {
+      .rail {
         display: none;
-      }
-
-      .deck {
-        margin-top: 0;
-        overflow: visible;
-        height: auto;
-      }
-
-      .slide {
-        position: static;
-        display: block !important;
-        page-break-after: always;
-        padding: 2rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <nav class="platform-topbar">
-    <div class="ptb-brand"><span class="ptb-logo">🎓</span><span>115學年度 三年23班｜國三班親會資訊平台</span></div>
-    <div class="ptb-links">
-      <a href="index.html" class="ptb-link">🏠 平台首頁</a>
-      <a href="calendar.html" class="ptb-link">📅 升學行事曆</a>
-      <a href="daily-safety.html" class="ptb-link">🛡️ 生活與安全</a>
-      <a href="conduct-dress-code.html" class="ptb-link">👔 生活規範與服儀</a>
-      <a href="class-fund-snack.html" class="ptb-link active">💰 班費與點心</a>
-    </div>
-  </nav>
+<nav class="platform-topbar">
+  <div class="ptb-brand"><span class="ptb-logo">🎓</span><span>115學年度 三年23班｜國三班親會資訊平台</span></div>
+  <div class="ptb-links">
+    <a href="index.html" class="ptb-link">🏠 平台首頁</a>
+    <a href="calendar.html" class="ptb-link">📅 升學行事曆</a>
+    <a href="daily-safety.html" class="ptb-link">🛡️ 生活與安全</a>
+    <a href="conduct-dress-code.html" class="ptb-link">👔 生活規範與服儀</a>
+    <a href="class-fund-snack.html" class="ptb-link active">💰 班費與點心</a>
+    <a href="exam-change.html" class="ptb-link">📚 段考變革</a>
+  </div>
+</nav>
 
   <div class="rail" id="rail"></div>
 
@@ -831,37 +651,16 @@
       var next = document.getElementById('next');
       var fs = document.getElementById('fs');
       var count = document.getElementById('count');
-      var deck = document.querySelector('.deck');
 
-      // 判斷是否為手機/平板模式 (配合 CSS Breakpoint)
-      function isMobileMode() {
-        return window.matchMedia('(max-width: 1024px)').matches;
-      }
-
-      // 更新進度與按鈕狀態
-      function updateUI() {
-        if (!isMobileMode()) {
-          for (var n = 0; n < total; n++) {
-            slides[n].classList.toggle('active', n === i);
-          }
-        }
+      function show(k) {
+        i = Math.max(0, Math.min(total - 1, k));
         for (var n = 0; n < total; n++) {
+          slides[n].classList.toggle('active', n === i);
           bars[n].classList.toggle('done', n <= i);
         }
         count.textContent = (i + 1) + ' / ' + total;
         prev.disabled = (i === 0);
         next.disabled = (i === total - 1);
-      }
-
-      // 切換投影片
-      function show(k) {
-        i = Math.max(0, Math.min(total - 1, k));
-        updateUI();
-
-        // 若為行動裝置模式，點擊按鈕時自動捲動到對應的投影片
-        if (isMobileMode()) {
-          slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
       }
 
       prev.addEventListener('click', function () { show(i - 1); });
@@ -882,30 +681,6 @@
         fs.textContent = document.fullscreenElement ? '離開全螢幕' : '全螢幕';
       });
 
-      // 行動裝置滾動監聽：滑動時同步更新下方指示器與進度條
-      var scrollTicking = false;
-      deck.addEventListener('scroll', function () {
-        if (!isMobileMode()) return;
-        if (scrollTicking) return;
-        scrollTicking = true;
-
-        requestAnimationFrame(function () {
-          var vpTop = deck.scrollTop;
-          var closest = 0;
-          var minDist = Infinity;
-
-          slides.forEach(function (s, index) {
-            var dist = Math.abs(s.offsetTop - deck.offsetTop - vpTop);
-            if (dist < minDist) { minDist = dist; closest = index; }
-          });
-
-          i = closest;
-          updateUI();
-          scrollTicking = false;
-        });
-      });
-
-      // 初始化
       show(0);
     })();
   </script>
