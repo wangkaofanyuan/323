@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>陽明國中 - 守時有原則 安全要優先</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1e40af',   /* Deep blue from poster title */
+                            orange: '#ea580c', /* Orange from section 3 */
+                            green: '#15803d',  /* Green from section 2 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        
+        /* Lightbox transitions */
+        .lightbox-enter { opacity: 0; transform: scale(0.95); }
+        .lightbox-enter-active { opacity: 1; transform: scale(1); transition: all 0.2s ease-out; }
+        .lightbox-exit { opacity: 1; transform: scale(1); }
+        .lightbox-exit-active { opacity: 0; transform: scale(0.95); transition: all 0.2s ease-in; }
+        
+        /* Hide scrollbar for cleaner mobile look */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-12 transition-colors duration-200">
+
+        <div class="bg-slate-900 text-center py-1.5">
+        <a href="index.html" class="text-[11px] font-bold text-slate-300 hover:text-white inline-flex items-center gap-1 transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"></path></svg>
+            返回班親會資訊平台首頁
+        </a>
+    </div>
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shadow-inner">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">守時原則與安全優先</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">陽明國中 ‧ 家長手機閱讀版</p>
+                </div>
+            </div>
+            
+            <button onclick="toggleDarkMode()" class="p-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 active:scale-95 rounded-full transition-transform" aria-label="切換深色模式">
+                <svg id="moonIcon" class="w-4 h-4 hidden dark:block text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="sunIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto space-y-5 px-4 pt-4">
+        
+        <!-- Original Image Reference & Lightbox trigger -->
+        <section class="bg-white dark:bg-slate-800 rounded-2xl p-2 shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden group cursor-pointer" onclick="openLightbox()">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 rounded-2xl">
+                <span class="bg-white/90 text-slate-900 text-sm font-bold py-1.5 px-4 rounded-full shadow-lg flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    點擊檢視原圖
+                </span>
+            </div>
+            <img src="S__17776713.jpg" alt="守時與安全原則原圖" class="w-full h-auto object-cover rounded-xl border border-slate-100 dark:border-slate-700"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x500/1e40af/ffffff?text=圖片載入失敗\\n(請確認+S__17776713.jpg+存在)';">
+        </section>
+
+        <div class="text-center py-2 space-y-2">
+            <h2 class="text-2xl font-black text-blue-800 dark:text-blue-400 tracking-wide">
+                7:30 準時到校<br>
+                <span class="text-lg text-slate-700 dark:text-slate-300">是我們共同的目標</span>
+            </h2>
+            <div class="bg-slate-200 dark:bg-slate-800 h-px w-16 mx-auto"></div>
+            <p class="text-sm font-medium text-rose-600 dark:text-rose-400">
+                安全到校，比準時更重要。<br>請同學依下列原則，做出負責任的選擇。
+            </p>
+        </div>
+
+        <!-- Principle 1: Blue -->
+        <section class="bg-blue-50/80 dark:bg-blue-950/20 rounded-2xl border-2 border-blue-200 dark:border-blue-900/50 overflow-hidden shadow-sm">
+            <div class="bg-blue-600 dark:bg-blue-800 text-white px-4 py-2.5 flex items-center space-x-2">
+                <span class="bg-white text-blue-700 font-black rounded-full w-6 h-6 flex items-center justify-center text-sm shadow-sm shrink-0">1</span>
+                <h3 class="font-bold text-base tracking-wide">平日｜準時到校</h3>
+            </div>
+            <div class="p-4 space-y-3">
+                <div class="flex items-center space-x-3 mb-2">
+                    <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-blue-100 dark:border-slate-700 flex flex-col items-center justify-center shrink-0">
+                        <span class="text-[10px] text-blue-500 dark:text-blue-400 font-bold uppercase leading-none">Time</span>
+                        <span class="text-lg font-black text-slate-800 dark:text-white leading-none mt-0.5">7:30</span>
+                    </div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                        請同學妥善規劃上學時間，<strong class="text-blue-700 dark:text-blue-400">7:30 前到校</strong>，養成守時與自我管理的習慣。
+                    </p>
+                </div>
+                <div class="bg-white/60 dark:bg-slate-800/50 rounded-lg p-2.5 text-center border border-blue-100 dark:border-slate-700">
+                    <p class="text-xs text-blue-800 dark:text-blue-300 font-bold flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        守時，是對自己與他人的尊重。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principle 2: Green -->
+        <section class="bg-emerald-50/80 dark:bg-emerald-950/20 rounded-2xl border-2 border-emerald-200 dark:border-emerald-900/50 overflow-hidden shadow-sm">
+            <div class="bg-emerald-600 dark:bg-emerald-800 text-white px-4 py-2.5 flex items-center space-x-2">
+                <span class="bg-white text-emerald-700 font-black rounded-full w-6 h-6 flex items-center justify-center text-sm shadow-sm shrink-0">2</span>
+                <h3 class="font-bold text-base tracking-wide">雨天｜安全優先</h3>
+            </div>
+            <div class="p-4 space-y-3">
+                <div class="flex items-start space-x-3 mb-2">
+                    <div class="text-3xl shrink-0 mt-1">☔</div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                        遇大雨、積水、視線不佳或交通受阻時，請勿為避免遲到而搶快、冒險趕路。
+                    </p>
+                </div>
+                <div class="bg-white/60 dark:bg-slate-800/50 rounded-lg p-2.5 text-center border border-emerald-100 dark:border-slate-700">
+                    <p class="text-xs text-emerald-800 dark:text-emerald-400 font-bold flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        安全，永遠是第一優先。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principle 3: Orange -->
+        <section class="bg-orange-50/80 dark:bg-orange-950/20 rounded-2xl border-2 border-orange-200 dark:border-orange-900/50 overflow-hidden shadow-sm">
+            <div class="bg-orange-500 dark:bg-orange-700 text-white px-4 py-2.5 flex items-center space-x-2">
+                <span class="bg-white text-orange-600 font-black rounded-full w-6 h-6 flex items-center justify-center text-sm shadow-sm shrink-0">3</span>
+                <h3 class="font-bold text-base tracking-wide">晚到｜主動說明</h3>
+            </div>
+            <div class="p-4 space-y-3">
+                <div class="flex items-start space-x-3 mb-2">
+                    <div class="text-3xl shrink-0 mt-1">💬</div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                        確因天候或交通狀況影響而晚到，請<strong class="text-orange-600 dark:text-orange-400">主動向導師說明原因</strong>。
+                    </p>
+                </div>
+                <div class="bg-white/60 dark:bg-slate-800/50 rounded-lg p-2.5 text-center border border-orange-100 dark:border-slate-700">
+                    <p class="text-xs text-orange-800 dark:text-orange-400 font-bold flex items-center justify-center">
+                        <span class="mr-1">❤️</span>
+                        確實告知，比匆忙趕路更重要。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lateness Rules Box -->
+        <section class="bg-slate-800 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md">
+            <div class="px-4 py-3 flex items-center space-x-2 border-b border-slate-700">
+                <span class="text-amber-400 text-lg">🔔</span>
+                <h3 class="font-bold text-base text-white tracking-wide">遲到登記提醒</h3>
+            </div>
+            <div class="p-4 space-y-4">
+                <!-- Rule 1 -->
+                <div class="flex space-x-3">
+                    <div class="bg-slate-700 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+                        <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">
+                        每日 <strong class="text-white">7:30</strong> 為到校時間基準，未準時到校，將由學校進行遲到登記。
+                    </p>
+                </div>
+                <!-- Rule 2 -->
+                <div class="flex space-x-3">
+                    <div class="bg-slate-700 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+                        <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">
+                        每週累計達 <strong class="text-rose-400">3 次</strong>，將收到「學生遲到通知與輔導回條」。
+                    </p>
+                </div>
+                <!-- Rule 3 -->
+                <div class="flex space-x-3">
+                    <div class="bg-slate-700 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+                        <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">
+                        收到通知單後，請依通知內容完成學務處輔導措施，並<strong class="text-white">依規定繳回</strong>。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Reminders -->
+        <section class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+            <div class="px-4 py-3 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 flex flex-col justify-center items-center text-center">
+                <span class="inline-block bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full mb-2">安全上學小提醒</span>
+                <p class="text-sm font-bold text-slate-800 dark:text-slate-200">
+                    我們要求守時，也要求你為自己的<span class="text-rose-600 dark:text-rose-400">安全負責</span>。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-px bg-slate-200 dark:bg-slate-700">
+                <!-- Tip 1 -->
+                <div class="bg-white dark:bg-slate-800 p-4 flex flex-col items-center text-center">
+                    <span class="text-3xl mb-2">🌂</span>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">雨天出門<br>帶傘、穿雨衣</span>
+                </div>
+                <!-- Tip 2 -->
+                <div class="bg-white dark:bg-slate-800 p-4 flex flex-col items-center text-center">
+                    <span class="text-3xl mb-2">💧</span>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">注意積水<br>小心濕滑</span>
+                </div>
+                <!-- Tip 3 -->
+                <div class="bg-white dark:bg-slate-800 p-4 flex flex-col items-center text-center">
+                    <span class="text-3xl mb-2">🚦</span>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">遵守交通規則<br>不搶快闖紅燈</span>
+                </div>
+                <!-- Tip 4 -->
+                <div class="bg-white dark:bg-slate-800 p-4 flex flex-col items-center text-center">
+                    <span class="text-3xl mb-2">🤝</span>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">互相關心<br>友善校園</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Footer Banner -->
+        <div class="bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50 rounded-xl p-4 text-center mt-6 shadow-sm">
+            <p class="text-sm font-bold text-rose-700 dark:text-rose-400 leading-relaxed">
+                ⚠️ 守時是一種責任，安全是一切的前提。<br>一起守護自己，也守護彼此！ ❤️
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4 transition-opacity opacity-0" onclick="closeLightbox()">
+        <!-- Close button -->
+        <button class="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm transition-colors" onclick="closeLightbox()" aria-label="關閉圖片">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <!-- Image container -->
+        <div class="w-full max-w-2xl max-h-[90vh] flex items-center justify-center" id="lightbox-content">
+            <img src="S__17776713.jpg" alt="守時與安全原則大圖" class="max-w-full max-h-[85vh] object-contain rounded-md" onclick="event.stopPropagation()">
+        </div>
+        
+        <!-- Hint -->
+        <p class="text-white/60 text-sm mt-4 font-medium tracking-wide">點擊黑色區域關閉</p>
+    </div>
+
+    <script>
+        // Check system preference on load for Dark Mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Dark Mode Toggle Logic
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+
+        function openLightbox() {
+            // Show element
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            // Trigger animation frame for transition
+            requestAnimationFrame(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+                
+                lightboxContent.classList.remove('scale-95');
+                lightboxContent.classList.add('scale-100');
+                lightboxContent.style.transition = 'transform 0.2s ease-out';
+            });
+            
+            // Prevent body scrolling on mobile
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            // Reverse animation
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            
+            lightboxContent.classList.remove('scale-100');
+            lightboxContent.classList.add('scale-95');
+
+            // Wait for transition to finish before hiding
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 200);
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

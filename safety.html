@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>陽明國中 - 制服日與保暖規範</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        
+        /* Lightbox transitions */
+        .lightbox-enter { opacity: 0; transform: scale(0.95); }
+        .lightbox-enter-active { opacity: 1; transform: scale(1); transition: all 0.2s ease-out; }
+        .lightbox-exit { opacity: 1; transform: scale(1); }
+        .lightbox-exit-active { opacity: 0; transform: scale(0.95); transition: all 0.2s ease-in; }
+        
+        /* Hide scrollbar for cleaner look on mobile while keeping functionality */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-12 transition-colors duration-200">
+
+        <div class="bg-slate-900 text-center py-1.5">
+        <a href="index.html" class="text-[11px] font-bold text-slate-300 hover:text-white inline-flex items-center gap-1 transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"></path></svg>
+            返回班親會資訊平台首頁
+        </a>
+    </div>
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shadow-inner">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">制服日與保暖規範</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">陽明國中 ‧ 家長手機閱讀版</p>
+                </div>
+            </div>
+            
+            <button onclick="toggleDarkMode()" class="p-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 active:scale-95 rounded-full transition-transform" aria-label="切換深色模式">
+                <svg id="moonIcon" class="w-4 h-4 hidden dark:block text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="sunIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto space-y-5 px-4 pt-4">
+        
+        <!-- Original Image Reference & Lightbox trigger -->
+        <section class="bg-white dark:bg-slate-800 rounded-2xl p-2 shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden group cursor-pointer" onclick="openLightbox()">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 rounded-2xl">
+                <span class="bg-white/90 text-slate-900 text-sm font-bold py-1.5 px-4 rounded-full shadow-lg flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                    點擊檢視原圖
+                </span>
+            </div>
+            <img src="S__17801244.jpg" alt="制服日規定原圖" class="w-full h-auto object-cover rounded-xl border border-slate-100 dark:border-slate-700"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x500/0f2b4c/ffffff?text=圖片載入失敗\\n(請確認+S__17801244.jpg+存在)';">
+        </section>
+
+        <div class="text-center py-2">
+            <h2 class="text-xl font-black text-blue-900 dark:text-blue-300 tracking-wide mb-1">穿出陽明好精神！</h2>
+            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">制服日，一週一次；平常穿運動服，保暖依序加衣。</p>
+        </div>
+
+        <section class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800 rounded-2xl border border-blue-100 dark:border-slate-700 overflow-hidden shadow-sm">
+            <div class="bg-blue-800 dark:bg-blue-900 text-white px-4 py-2.5 flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <h3 class="font-bold text-base tracking-wide">制服日｜穿學校制服</h3>
+            </div>
+            <div class="p-4 space-y-3">
+                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                    每週一次制服日，請穿著本校制服，整齊穿著，展現陽明學生精神。
+                </p>
+                <div class="bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800/50 rounded-xl p-3 flex items-start space-x-2">
+                    <span class="text-amber-600 dark:text-amber-400 text-lg leading-none shrink-0">⭐</span>
+                    <p class="text-sm text-amber-900 dark:text-amber-300 font-bold">
+                        小提醒：制服日請依規定穿著制服，<span class="underline underline-offset-2">不混穿運動服或便服</span>。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+            <div class="bg-emerald-700 dark:bg-emerald-900 text-white px-4 py-2.5 flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <h3 class="font-bold text-base tracking-wide">平常日｜穿學校運動服</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-sm text-slate-600 dark:text-slate-400 font-medium mb-4">其他上課日穿著本校運動服。需要保暖時，依下列順序穿著：</p>
+                
+                <!-- Vertical Timeline for layering steps -->
+                <div class="relative pl-6 space-y-6 before:absolute before:inset-y-0 before:left-[11px] before:w-[2px] before:bg-emerald-100 dark:before:bg-emerald-900/50">
+                    
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-6 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-black shadow z-10 border-2 border-white dark:border-slate-800">1</div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-base mb-1">先換長袖、長褲</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">依季節換穿學校運動服長袖與長褲。</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-6 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-black shadow z-10 border-2 border-white dark:border-slate-800">2</div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-base mb-1">穿學校運動外套</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">穿上學校運動外套，保暖又整齊。</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-6 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-black shadow z-10 border-2 border-white dark:border-slate-800">3</div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-base mb-2">還是不夠暖，再加保暖衣物</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">裡面或外面可再依個人需要增加保暖衣物：</p>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-2.5 rounded-lg border border-slate-100 dark:border-slate-700">
+                                <span class="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1">裡面可以加</span>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-200">發熱衣、保暖衣物等</span>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-2.5 rounded-lg border border-slate-100 dark:border-slate-700">
+                                <span class="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1">外面可以加</span>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-200">個人外套、圍巾、手套等禦寒衣物</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-rose-50 dark:bg-rose-950/20 border-2 border-rose-200 dark:border-rose-900/50 rounded-2xl overflow-hidden shadow-sm">
+            <div class="p-4 flex flex-col items-center justify-center text-center border-b border-rose-200/60 dark:border-rose-900/40">
+                <div class="w-12 h-12 bg-rose-100 dark:bg-rose-900 text-rose-600 dark:text-rose-400 rounded-full flex items-center justify-center mb-2">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                </div>
+                <h3 class="font-black text-rose-700 dark:text-rose-400 text-lg">保暖可以加，校服不能被取代！</h3>
+                <p class="text-sm text-rose-800/80 dark:text-rose-300/80 font-medium mt-2">不要單穿便服外套取代學校運動外套。<br>需要保暖，請先穿好學校服裝，再依需要加衣。</p>
+            </div>
+            
+            <div class="p-4 space-y-4">
+                <!-- Wrong Practices -->
+                <div class="bg-white/70 dark:bg-slate-800/60 rounded-xl p-3 border border-rose-100 dark:border-slate-700">
+                    <h4 class="text-sm font-bold text-rose-600 flex items-center mb-2">
+                        <span class="mr-1">❌</span> 錯誤穿法 (不符合規定)
+                    </h4>
+                    <ul class="space-y-1.5 pl-6 text-sm text-slate-700 dark:text-slate-300 font-medium list-disc">
+                        <li>單穿便服外套</li>
+                        <li>只穿短袖或短褲</li>
+                    </ul>
+                </div>
+
+                <!-- Correct Practices -->
+                <div class="bg-white/70 dark:bg-slate-800/60 rounded-xl p-3 border border-emerald-100 dark:border-slate-700">
+                    <h4 class="text-sm font-bold text-emerald-600 flex items-center mb-2">
+                        <span class="mr-1">✅</span> 正確穿法 (符合規定)
+                    </h4>
+                    <ul class="space-y-1.5 pl-6 text-sm text-slate-700 dark:text-slate-300 font-medium list-disc">
+                        <li>學校運動服 <span class="text-emerald-500 font-bold">+</span> 運動外套</li>
+                        <li>外面加個人外套 (可加圍巾、手套等)</li>
+                        <li>裡面加保暖衣物 <span class="text-emerald-500 font-bold">+</span> 學校運動外套</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer snippet from image -->
+        <div class="text-center pt-2 pb-4">
+            <p class="text-xs font-bold text-slate-400 dark:text-slate-500 tracking-widest">
+                陽明國中 關心你 ❤️<br>
+                <span class="font-normal mt-1 block">整齊 ‧ 合宜 ‧ 自信 一起做好學生的榜樣！</span>
+            </p>
+        </div>
+
+    </main>
+
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4 transition-opacity opacity-0" onclick="closeLightbox()">
+        <!-- Close button -->
+        <button class="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm transition-colors" onclick="closeLightbox()" aria-label="關閉圖片">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <!-- Image container -->
+        <div class="w-full max-w-2xl max-h-[90vh] flex items-center justify-center" id="lightbox-content">
+            <img src="S__17801244.jpg" alt="制服日規定大圖" class="max-w-full max-h-[85vh] object-contain rounded-md" onclick="event.stopPropagation()">
+        </div>
+        
+        <!-- Hint -->
+        <p class="text-white/60 text-sm mt-4 font-medium tracking-wide">點擊黑色區域關閉</p>
+    </div>
+
+    <script>
+        // Check system preference on load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Dark Mode Toggle Logic
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+
+        function openLightbox() {
+            // Show element
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            // Trigger animation frame for transition
+            requestAnimationFrame(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+                
+                lightboxContent.classList.remove('scale-95');
+                lightboxContent.classList.add('scale-100');
+                lightboxContent.style.transition = 'transform 0.2s ease-out';
+            });
+            
+            // Prevent body scrolling on mobile
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            // Reverse animation
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            
+            lightboxContent.classList.remove('scale-100');
+            lightboxContent.classList.add('scale-95');
+
+            // Wait for transition to finish before hiding
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 200);
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陽明國中 - 國三段考變革通知（家長手機版）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Dynamic Font Sizes for Accessibility */
+        .text-size-sm { font-size: 0.95rem; line-height: 1.5; }
+        .text-size-base { font-size: 1.05rem; line-height: 1.6; }
+        .text-size-lg { font-size: 1.20rem; line-height: 1.75; }
+        .text-size-xl { font-size: 1.35rem; line-height: 1.8; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-20 transition-colors duration-200">
+
+        <div class="bg-slate-900 text-center py-1.5">
+        <a href="index.html" class="text-[11px] font-bold text-slate-300 hover:text-white inline-flex items-center gap-1 transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"></path></svg>
+            返回班親會資訊平台首頁
+        </a>
+    </div>
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-800/95 backdrop-blur shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <div class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-base shadow shrink-0">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-slate-900 dark:text-white leading-tight">國三段考變革通知</h1>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">陽明國中 ‧ 家長手機閱讀專頁</p>
+                </div>
+            </div>
+            
+            <!-- Controls: Font Size & Dark Mode -->
+            <div class="flex items-center space-x-1.5">
+                <button id="fontBtn" onclick="cycleFontSize()" class="px-2.5 py-1 text-xs font-bold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition flex items-center space-x-1" title="切換字體大小">
+                    <span>字級:</span>
+                    <span id="fontLabel" class="text-indigo-600 dark:text-indigo-400 font-extrabold">中</span>
+                </button>
+                <button onclick="toggleDarkMode()" class="p-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition" title="切換深色/淺色模式">
+                    <svg id="moonIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="sunIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-4 pt-4 space-y-4" id="mainContent">
+
+        <!-- Search Input -->
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="搜尋關鍵字 (如：生物、段考、自習、會考)..." 
+                class="w-full pl-9 pr-8 py-2.5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs font-bold">
+                ✕
+            </button>
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-800 text-white rounded-2xl p-4 shadow-md space-y-2 relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 bg-white/20 rounded-full text-[11px] font-semibold backdrop-blur">重要教學通知</span>
+                <span class="text-xs text-indigo-100">致 國三全體家長</span>
+            </div>
+            <h2 class="text-base font-bold leading-snug pt-0.5">
+                國三段考考程策略性微調說明
+            </h2>
+            <p class="text-xs text-indigo-50 leading-relaxed pt-1 border-t border-indigo-500/50">
+                各位家長您好：面對即將到來的國中教育會考，為了協助孩子們提早建立穩固的複習節奏，學校特別針對國三段考考程進行了策略性的微調，敬請家長共同關注並協助引導！
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">🧬</span>
+                <div>
+                    <div class="font-bold text-indigo-900 dark:text-indigo-200 text-xs">會考生物佔比高</div>
+                    <div class="text-[11px] text-indigo-700 dark:text-indigo-400">國一內容需提早重溫</div>
+                </div>
+            </div>
+            <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">⏱️</span>
+                <div>
+                    <div class="font-bold text-amber-900 dark:text-amber-200 text-xs">精簡一節自習課</div>
+                    <div class="text-[11px] text-amber-700 dark:text-amber-400">彈性運用段考空檔</div>
+                </div>
+            </div>
+            <div class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">✍️</span>
+                <div>
+                    <div class="font-bold text-emerald-900 dark:text-emerald-200 text-xs">彈性加考生物科</div>
+                    <div class="text-[11px] text-emerald-700 dark:text-emerald-400">納入正式段考考程</div>
+                </div>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">🎯</span>
+                <div>
+                    <div class="font-bold text-purple-900 dark:text-purple-200 text-xs">落實以考促學</div>
+                    <div class="text-[11px] text-purple-700 dark:text-purple-400">避免九下措手不及</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-2.5 search-item">
+            <div class="flex items-center space-x-2 border-b border-slate-100 dark:border-slate-700/60 pb-2">
+                <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300 font-bold text-xs flex items-center justify-center shrink-0">一</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">變革背景與原因</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                在國中教育會考的自然科測驗中，一年級所學的<strong class="text-indigo-600 dark:text-indigo-400 font-bold">「生物」佔了相當重要的出題比例</strong>。
+            </p>
+            
+            <div class="bg-slate-50 dark:bg-slate-700/40 p-3 rounded-xl text-xs space-y-1.5 border border-slate-200/60 dark:border-slate-600/50">
+                <div class="font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                    <span class="mr-1.5">💡</span> 現況分析與學生學習痛點：
+                </div>
+                <ul class="space-y-1 text-slate-600 dark:text-slate-300 pl-1">
+                    <li class="flex items-start">
+                        <span class="text-indigo-500 mr-1.5">•</span>
+                        <span>孩子們對兩年前（國一）學習的生物內容大多已有部分生疏。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-500 mr-1.5">•</span>
+                        <span>若等到九年級下學期才開始複習，容易因同時面對新進度與全科總複習而措手不及。</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-3 search-item">
+            <div class="flex items-center space-x-2 border-b border-slate-100 dark:border-slate-700/60 pb-2">
+                <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 font-bold text-xs flex items-center justify-center shrink-0">二</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">具體考程調整作法</h3>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                參考過往的段考日程安排，學生在段考期間擁有較多自主複習與自習時間。
+            </p>
+
+            <!-- Card 2A: Exam Adjustment Action -->
+            <div class="bg-amber-50/90 dark:bg-amber-950/30 p-3 rounded-xl border border-amber-200/80 dark:border-amber-900/40 space-y-1.5 text-xs">
+                <div class="font-bold text-amber-900 dark:text-amber-200 flex items-center">
+                    <span class="mr-1.5">⏱️</span> 段考考程彈性調整：
+                </div>
+                <p class="text-amber-800 dark:text-amber-300 leading-relaxed">
+                    本次國三段考將會<strong class="text-amber-950 dark:text-amber-100 underline font-bold">彈性減少一節自習課</strong>，並利用該時段<strong class="text-rose-600 dark:text-rose-400 font-bold">「加考生物科」</strong>。
+                </p>
+            </div>
+
+            <!-- Card 2B: Core Goal -->
+            <div class="bg-indigo-50/90 dark:bg-indigo-950/30 p-3 rounded-xl border border-indigo-200/80 dark:border-indigo-900/40 space-y-1.5 text-xs">
+                <div class="font-bold text-indigo-900 dark:text-indigo-200 flex items-center">
+                    <span class="mr-1.5">🎯</span> 調整核心目的「以考促學」：
+                </div>
+                <p class="text-indigo-800 dark:text-indigo-300 leading-relaxed">
+                    透過段考加考，引導孩子在日常的段考準備中，<strong class="font-bold">主動將一年級生物納入複習計畫</strong>，協助孩子重溫舊知、提早建立穩健的會考複習節奏。
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-2.5 search-item">
+            <div class="flex items-center space-x-2 border-b border-slate-100 dark:border-slate-700/60 pb-2">
+                <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0">三</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">家長配合與叮嚀事項</h3>
+            </div>
+            
+            <div class="bg-emerald-50/90 dark:bg-emerald-950/30 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-900/40 space-y-2 text-xs">
+                <div class="font-bold text-emerald-900 dark:text-emerald-200 flex items-center">
+                    <span class="mr-1.5">🏡</span> 請家長在家中協助督促：
+                </div>
+                <ul class="space-y-1.5 text-emerald-800 dark:text-emerald-300 leading-relaxed pl-1">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-1.5">1.</span>
+                        <span>請多加鼓勵孩子，幫助孩子理解「提早複習生物」對於國三會考的重要性。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-1.5">2.</span>
+                        <span>協助督促孩子撥出適當時間複習一年級生物課本與講義，將舊知識逐步補齊。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-1.5">3.</span>
+                        <span>建立良好的作息與複習習慣，提前為會考做好萬全準備！</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="bg-slate-800 text-white dark:bg-slate-800/90 rounded-2xl p-4 shadow-sm text-center space-y-2 border border-slate-700">
+            <div class="text-2xl">🎓</div>
+            <p class="text-xs text-slate-200 font-medium leading-relaxed px-2">
+                「提早準備、穩紮穩打！感謝家長們共同關心孩子的學習發展，讓我們攜手協助孩子迎戰會考！」
+            </p>
+            <div class="text-[11px] text-indigo-400 font-bold">— 陽明國中 謹啟</div>
+        </div>
+
+        <button onclick="shareExamNotice()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-3 px-4 rounded-xl shadow transition flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+            <span>複製段考變革摘要至 LINE 群組</span>
+        </button>
+
+    </main>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/95 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center space-x-2">
+        <span id="toastMessage">已複製到剪貼簿！</span>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        const fontSizes = [
+            { key: 'sm', label: '小' },
+            { key: 'base', label: '中' },
+            { key: 'lg', label: '大' },
+            { key: 'xl', label: '特大' }
+        ];
+        let currentFontIndex = 1;
+
+        function cycleFontSize() {
+            const mainContent = document.getElementById('mainContent');
+            
+            fontSizes.forEach(f => mainContent.classList.remove(`text-size-${f.key}`));
+            currentFontIndex = (currentFontIndex + 1) % fontSizes.length;
+            const newSize = fontSizes[currentFontIndex];
+            
+            mainContent.classList.add(`text-size-${newSize.key}`);
+            document.getElementById('fontLabel').textContent = newSize.label;
+            
+            showToast(`字體已調整為：${newSize.label}`);
+        }
+
+        function filterContent() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            const items = document.querySelectorAll('.search-item');
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            filterContent();
+        }
+
+        function shareExamNotice() {
+            const examNoticeText = 
+`【陽明國中 國三段考變革通知重點說明】
+一、變革背景與原因：
+會考自然科中國一「生物」佔重要比例。考量學生對兩年前生物內容生疏，為協助重溫舊知、建立複習節奏，學校進行段考考程策略性微調。
+
+二、考程調整作法：
+本次段考將彈性減少一節自習課，並利用該時段「加考生物科」，落實「以考促學」，引導學生主動將生物納入段考複習計畫，避免九下措手不及。
+
+三、家長配合叮嚀：
+請家長在家多加鼓勵並督促孩子撥出時間複習生物，提早為會考做好萬全準備！`;
+
+            copyTextToClipboard(examNoticeText, "已成功複製段考變革摘要，可直接貼上至 LINE 群組！");
+        }
+
+        function copyTextToClipboard(text, successMsg) {
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand("copy");
+                showToast(successMsg);
+            } catch (err) {
+                showToast("複製失敗，請手動選取複製");
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+
+        // Set Base Text Size on Load
+        document.getElementById('mainContent').classList.add('text-size-base');
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>陽明國中 3年23班 - 國三班親會資訊平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .tile { transition: transform .12s ease, box-shadow .12s ease; }
+        .tile:active { transform: scale(0.97); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-10 transition-colors duration-200">
+
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-base shadow-inner shrink-0">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">國三班親會資訊平台</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">陽明國中 3年23班 ‧ 家長手機導覽首頁</p>
+                </div>
+            </div>
+            <button onclick="toggleDarkMode()" class="p-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 active:scale-95 rounded-full transition-transform shrink-0" aria-label="切換深色模式">
+                <svg id="moonIcon" class="w-4 h-4 hidden dark:block text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="sunIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-4 pt-5 space-y-6">
+
+        <!-- Hero -->
+        <section class="bg-gradient-to-br from-blue-800 to-blue-950 rounded-2xl p-5 text-white shadow-md relative overflow-hidden">
+            <div class="absolute -right-6 -top-6 w-28 h-28 bg-white/10 rounded-full"></div>
+            <div class="absolute -right-1 bottom-2 w-14 h-14 bg-white/10 rounded-full"></div>
+            <p class="text-[11px] font-bold text-blue-200 mb-1">家長您好</p>
+            <h2 class="text-xl font-black leading-snug mb-2">
+                歡迎查閱本班<br>班親會六大重要資訊
+            </h2>
+            <p class="text-xs text-blue-100 leading-relaxed">
+                為了讓親師溝通更順暢，我們將班親會相關內容整理為以下六個單元，請點選卡片閱讀詳情。
+            </p>
+        </section>
+
+        <!-- Section label -->
+        <div class="flex items-center justify-between px-1">
+            <h3 class="text-sm font-bold text-slate-700 dark:text-slate-300">六大單元導覽</h3>
+            <span class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">點選卡片進入</span>
+        </div>
+
+        <!-- Navigation Cards Grid -->
+        <div class="grid grid-cols-2 gap-3">
+
+            <a href="daily.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-blue-200 dark:border-blue-900/50 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center text-xl shadow-sm">⏰</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">守時與安全上學</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">7:30準時到校，安全永遠優先</p>
+            </a>
+
+            <a href="conduct-dress-code.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-teal-200 dark:border-teal-900/50 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-teal-600 flex items-center justify-center text-xl shadow-sm">📋</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">每日作息與生活須知</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">早餐、作息與生活常規總整理</p>
+            </a>
+
+            <a href="class-fund-snack.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-amber-200 dark:border-amber-900/50 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-amber-600 flex items-center justify-center text-xl shadow-sm">💰</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">班費與第八節點心</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">園遊會成果與班費運用報告</p>
+            </a>
+
+            <a href="safety.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-rose-200 dark:border-rose-900/50 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-rose-600 flex items-center justify-center text-xl shadow-sm">🧥</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">制服日與保暖規範</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">制服穿著與寒流保暖措施</p>
+            </a>
+
+            <a href="exam-change.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-violet-200 dark:border-violet-900/50 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-violet-600 flex items-center justify-center text-xl shadow-sm">📝</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">國三段考變革通知</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">段考題型與評量方式調整</p>
+            </a>
+
+            <a href="calendar-phone.html" class="tile bg-white dark:bg-slate-800 rounded-2xl border-2 border-slate-300 dark:border-slate-700 shadow-sm p-4 flex flex-col items-start space-y-2">
+                <div class="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-xl shadow-sm">🗓️</div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">升學重要行事曆</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">模考、會考日期一次掌握</p>
+            </a>
+
+        </div>
+
+        <!-- Footer note -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 text-center mt-2">
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                本平台彙整班親會六項公告內容，僅供家長手機閱讀參考。<br>如有疑問，歡迎透過班級群組與導師聯繫。
+            </p>
+        </div>
+
+    </main>
+
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>

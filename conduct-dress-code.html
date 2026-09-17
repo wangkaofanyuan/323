@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陽明國中 - 學生每日作息與生活須知（家長閱讀版）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#16a34a',
+                            600: '#15803d',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Dynamic Font Size Adjustment Classes */
+        .text-size-sm { font-size: 0.95rem; line-height: 1.5; }
+        .text-size-base { font-size: 1.05rem; line-height: 1.6; }
+        .text-size-lg { font-size: 1.2rem; line-height: 1.75; }
+        .text-size-xl { font-size: 1.35rem; line-height: 1.8; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-20 transition-colors duration-200">
+
+    <!-- Top Sticky Header -->
+        <div class="bg-slate-900 text-center py-1.5">
+        <a href="index.html" class="text-[11px] font-bold text-slate-300 hover:text-white inline-flex items-center gap-1 transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"></path></svg>
+            返回班親會資訊平台首頁
+        </a>
+    </div>
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-800/95 backdrop-blur shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-slate-900 dark:text-white leading-tight">每日作息與生活須知</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">陽明學校校務宣導 ‧ 家長手機閱讀版</p>
+                </div>
+            </div>
+            
+            <!-- Dark Mode & Font Size Controls -->
+            <div class="flex items-center space-x-1.5">
+                <button id="fontBtn" onclick="cycleFontSize()" class="px-2 py-1 text-xs font-bold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition" title="切換字體大小">
+                    字級: <span id="fontLabel">中</span>
+                </button>
+                <button onclick="toggleDarkMode()" class="p-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition" title="切換深色模式">
+                    <svg id="moonIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="sunIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Jump Navigation Bar (Horizontal Scroll) -->
+        <div class="max-w-md mx-auto px-4 py-2 border-t border-slate-100 dark:border-slate-700/60 overflow-x-auto whitespace-nowrap scrollbar-none flex space-x-2 text-xs font-medium">
+            <a href="#breakfast" class="px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 flex items-center shrink-0">
+                <span class="mr-1">🥪</span> 7:10早餐規定
+            </a>
+            <a href="#schedule" class="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800 flex items-center shrink-0">
+                <span class="mr-1">⏰</span> 作息時間表
+            </a>
+            <a href="#rules" class="px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 flex items-center shrink-0">
+                <span class="mr-1">📋</span> 全天生活須知
+            </a>
+            <a href="#phone" class="px-3 py-1.5 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800 flex items-center shrink-0">
+                <span class="mr-1">📱</span> 手機領取規則
+            </a>
+            <a href="#safety" class="px-3 py-1.5 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800 flex items-center shrink-0">
+                <span class="mr-1">🚨</span> 安全巡邏與聯繫
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-4 pt-4 space-y-5" id="mainContent">
+
+        <!-- Quick Search & Filter Box -->
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="搜尋關鍵字 (如：手機、遲到、早餐、公假)..." 
+                class="w-full pl-9 pr-8 py-2.5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                ✕
+            </button>
+        </div>
+
+        <!-- Section: Urgent / Highlight Announcement for Breakfast & Arrival -->
+        <section id="breakfast" class="scroll-mt-28 border border-amber-200 dark:border-amber-900/60 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-amber-200/40 dark:bg-amber-800/20 rounded-bl-full pointer-events-none"></div>
+            
+            <div class="flex items-center space-x-2 mb-2">
+                <span class="inline-flex items-center justify-center w-7 h-7 bg-amber-500 text-white font-bold rounded-lg text-sm">
+                    重
+                </span>
+                <h2 class="font-bold text-slate-900 dark:text-amber-200 text-base">
+                    上午 7:10 - 7:30 早餐與到校特別提醒
+                </h2>
+            </div>
+            
+            <p class="text-xs text-amber-800 dark:text-amber-300 font-medium mb-3 bg-amber-100/80 dark:bg-amber-900/40 px-2.5 py-1 rounded-md inline-block">
+                請家長協助提醒孩子準時到校，避免於校外聚集逗留
+            </p>
+
+            <div class="space-y-2.5 text-slate-700 dark:text-slate-300 text-sm">
+                <div class="flex items-start space-x-2 bg-white/70 dark:bg-slate-800/80 p-2.5 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                    <span class="text-amber-600 font-bold shrink-0">1.</span>
+                    <p><strong class="text-slate-900 dark:text-slate-100">避開尖峰避免延誤：</strong> 7:10 至 7:30 為校外早餐店人潮較多時段，學生若在店內用餐或逗留，容易延誤到校時間。</p>
+                </div>
+                <div class="flex items-start space-x-2 bg-white/70 dark:bg-slate-800/80 p-2.5 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                    <span class="text-amber-600 font-bold shrink-0">2.</span>
+                    <p><strong class="text-slate-900 dark:text-slate-100">維護安全與秩序：</strong> 請勿在學校周邊早餐店聚集或嬉鬧，以免衍生違規事件或影響社區秩序。</p>
+                </div>
+                <div class="flex items-start space-x-2 bg-white/70 dark:bg-slate-800/80 p-2.5 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                    <span class="text-amber-600 font-bold shrink-0">3.</span>
+                    <p><strong class="text-slate-900 dark:text-slate-100">用餐建議處置：</strong> 若孩子自行上學，建議買完早餐後<span class="text-amber-700 dark:text-amber-400 font-semibold">直接帶入學校教室食用</span>，並於 7:30 前進入班級；<span class="text-emerald-700 dark:text-emerald-400 font-semibold">由家長陪同用餐者則不在此限</span>。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Daily Schedule (Timetable) -->
+        <section id="schedule" class="scroll-mt-28 space-y-3">
+            <div class="flex items-center justify-between">
+                <h2 class="font-bold text-slate-900 dark:text-white text-base flex items-center">
+                    <span class="w-2 h-5 bg-blue-600 rounded-full mr-2"></span>
+                    每日作息時間表
+                </h2>
+                <span class="text-xs text-slate-500">按時段呈現 ‧ 點擊展開</span>
+            </div>
+
+            <!-- Schedule Card Items -->
+            <div class="space-y-2.5 search-item">
+                <!-- Item: Morning Prep -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 text-xs font-bold rounded-md">
+                            起床準備
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">出門前</span>
+                    </div>
+                    <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                        整理服裝儀容，帶齊物品，吃完早餐，開心上學。
+                    </p>
+                </div>
+
+                <!-- Item: Arrival -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 text-xs font-bold rounded-md">
+                            07:10 - 07:30
+                        </span>
+                        <span class="text-xs font-semibold text-amber-600 dark:text-amber-400">07:30 風紀登記遲到</span>
+                    </div>
+                    <ul class="text-sm space-y-1.5 text-slate-700 dark:text-slate-300 list-disc list-inside">
+                        <li><strong class="text-rose-600 dark:text-rose-400">安全起見，請勿在 7:10 前到校。</strong></li>
+                        <li>早餐在家吃完或買進學校食用，<span class="text-rose-600 dark:text-rose-400 font-semibold">請勿在校外早餐店內吃</span>。</li>
+                        <li>禁止在外逗留、不當聚集，進入學校後不得再擅自外出。</li>
+                        <li>途中遵守交通規則（提醒家長切勿違規迴轉、闖紅燈或未戴安全帽）。</li>
+                        <li>遵守導護師長與糾察隊指揮，注意禮貌問好。</li>
+                    </ul>
+                </div>
+
+                <!-- Item: Morning Study -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 text-xs font-bold rounded-md">
+                            07:30 - 08:10
+                        </span>
+                        <span class="text-xs text-slate-400">早修與打掃</span>
+                    </div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        依導師安排安靜早修或打掃。若有集會活動，副班長拿老師椅子集合定位，全班服裝統一並安靜快速排隊前往集合場。
+                    </p>
+                </div>
+
+                <!-- Item: Lessons -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 text-xs font-bold rounded-md">
+                            每節上課
+                        </span>
+                        <span class="text-xs text-slate-400">課堂紀律</span>
+                    </div>
+                    <ul class="text-sm space-y-1 text-slate-700 dark:text-slate-300 list-disc list-inside">
+                        <li>預備鐘聲結束前進到課堂，備妥教材安靜等候。</li>
+                        <li>非緊急狀況不得離開課堂，禁止拿出無關物品。</li>
+                        <li>嚴禁干擾師長授課或影響他人學習。</li>
+                    </ul>
+                </div>
+
+                <!-- Item: Breaks -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-300 text-xs font-bold rounded-md">
+                            每節下課
+                        </span>
+                        <span class="text-xs text-slate-400">休息與安全</span>
+                    </div>
+                    <ul class="text-sm space-y-1 text-slate-700 dark:text-slate-300 list-disc list-inside">
+                        <li>記得上廁所喝水。走廊僅供安全通行，<span class="text-rose-600 dark:text-rose-400">禁止追逐、打球或喧嘩</span>。</li>
+                        <li>進辦公室請喊「報告」並降低音量。</li>
+                        <li><strong class="text-slate-800 dark:text-slate-200">嚴禁跨班跨棟不當聚集。</strong></li>
+                        <li>無公務禁止進入地下室、車棚、烤肉區等校園死角。</li>
+                    </ul>
+                </div>
+
+                <!-- Item: Lunch & Cleaning -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-300 text-xs font-bold rounded-md">
+                            12:00 - 12:40
+                        </span>
+                        <span class="text-xs text-slate-400">用餐與整潔</span>
+                    </div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        洗手後用餐。用餐完畢認真打掃並於 <strong class="text-slate-900 dark:text-white">12:35 收尾回教室</strong>。<span class="text-rose-600 dark:text-rose-400 font-semibold">禁止將任何餐點食物帶離教室</span>。
+                    </p>
+                </div>
+
+                <!-- Item: Nap Time -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300 text-xs font-bold rounded-md">
+                            午休時間
+                        </span>
+                        <span class="text-xs text-slate-400">養精蓄銳</span>
+                    </div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        一律趴著閉眼休息，禁止離開教室或打擾他人。（公假同學請於午休開始前抵達公務場地）。
+                    </p>
+                </div>
+
+                <!-- Item: Dismissal -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-3.5 border border-slate-200/80 dark:border-slate-700 shadow-sm border-l-4 border-l-emerald-500">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 text-xs font-bold rounded-md">
+                            放學回家
+                        </span>
+                        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">平安返家</span>
+                    </div>
+                    <ul class="text-sm space-y-1.5 text-slate-700 dark:text-slate-300 list-disc list-inside">
+                        <li>儘速離校返家報平安，換好便服經父母允許方可再出門。</li>
+                        <li>嚴禁在校內或沿途任何定點不當停留、聚集。</li>
+                        <li>注意言行服儀，維護校譽。<span class="text-rose-600 dark:text-rose-400 font-semibold">若破壞校譽將以大過處分</span>。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: All-Day Rules (Key Rules Summary) -->
+        <section id="rules" class="scroll-mt-28 space-y-3">
+            <div class="flex items-center justify-between">
+                <h2 class="font-bold text-slate-900 dark:text-white text-base flex items-center">
+                    <span class="w-2 h-5 bg-emerald-600 rounded-full mr-2"></span>
+                    全天生活重點校規與安全規範
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2.5">
+                
+                <!-- Rule Item 1: Phone Management -->
+                <div id="phone" class="scroll-mt-28 bg-white dark:bg-slate-800 p-4 rounded-xl border border-rose-200 dark:border-rose-900/60 shadow-sm relative overflow-hidden">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-300 rounded-lg shrink-0">
+                            📱
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">
+                                手機使用與領取規定
+                            </h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <strong class="text-rose-600 dark:text-rose-400">全天手機必須關機。</strong> 凡被發現為開機狀態（無論是否使用中），一律由學校暫時保管。
+                            </p>
+                            <div class="mt-2 bg-rose-50 dark:bg-rose-950/40 p-2.5 rounded-lg border border-rose-100 dark:border-rose-900/40 text-xs text-rose-800 dark:text-rose-300">
+                                📌 <strong>家長領回流程：</strong> 學生開立並簽完「領取單」後，<span class="underline font-bold">必須由家長親自攜帶領取單到校領回</span>。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule Item 2: Physical boundaries & Conflicts -->
+                <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-sm search-item">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg shrink-0">
+                            🤝
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">身體界線與衝突處理</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                男男、女女、男女<strong class="text-rose-600 dark:text-rose-400">嚴禁任何不當身體碰觸</strong>。禁止跨班跨棟聚集，若有任何人際衝突，<strong class="text-amber-600 dark:text-amber-400">切勿私下自行處置</strong>，請立即尋求師長協助。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule Item 3: Non-learning items & money -->
+                <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-sm search-item">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg shrink-0">
+                            🚫
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">物品攜帶與金錢借貸</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                與學習無關物品一律禁止帶到學校！校園內<strong class="text-rose-600 dark:text-rose-400">嚴禁買賣交易及金錢借貸</strong>。害人之心不可有、防人之心不可有，請學生妥善保管自身個人財物。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule Item 4: Food & Building courtesy -->
+                <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-sm search-item">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg shrink-0">
+                            🍱
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">飲食範圍與高樓安全</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                所有食物<strong class="text-slate-900 dark:text-white">一律在教室內食用</strong>。請尊重低樓層同學，<strong class="text-rose-600 dark:text-rose-400">嚴禁將任何物品從高樓層往拋丟</strong>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule Item 5: Socializing & Visitors -->
+                <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-sm search-item">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg shrink-0">
+                            👥
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">校外親友相約限制</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                除家長／監護人或其授權委託之人外，<strong class="text-rose-600 dark:text-rose-400">不得約任何親朋好友到學校或校園周邊碰面、聚集</strong>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule Item 6: Manners & Self-discipline -->
+                <div class="bg-white dark:bg-slate-800 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-sm search-item">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg shrink-0">
+                            ✨
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-sm">禮貌態度與學習自主</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                見到師長主動問好，<strong class="text-rose-600 dark:text-rose-400">嚴禁口出穢言</strong>。請將自主性與創意發揮在學習成長上，而非違反校規。共同維護陽明優良校譽！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Safety Cooperation & Contact info -->
+        <section id="safety" class="scroll-mt-28 bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800/60 rounded-2xl p-4 shadow-sm space-y-3">
+            <div class="flex items-center space-x-2">
+                <span class="p-1.5 bg-purple-600 text-white rounded-lg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </span>
+                <h2 class="font-bold text-slate-900 dark:text-purple-100 text-base">
+                    校園周邊安全巡邏與通報管道
+                </h2>
+            </div>
+
+            <p class="text-xs text-purple-900 dark:text-purple-300 leading-relaxed">
+                學校已與<strong>少年隊</strong>及<strong>陽明派出所</strong>保持緊密聯繫，強化校園周邊危安熱點之巡邏與維安工作。
+            </p>
+
+            <div class="bg-white dark:bg-slate-800/90 rounded-xl p-3 border border-purple-100 dark:border-purple-900/50 space-y-2 text-xs">
+                <div class="flex items-start space-x-2">
+                    <span class="text-purple-600 font-bold">📢</span>
+                    <p class="text-slate-700 dark:text-slate-300">
+                        家長若發現學生於校外逗留、異常聚集，或發現其他安全疑慮，請立即連繫學校學務處協助處置。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons for Quick Contact / Share -->
+            <div class="pt-1 flex space-x-2">
+                <button onclick="shareTextNotice()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl shadow transition flex items-center justify-center space-x-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                    <span>複製重點分享至 LINE 群組</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Summary Checklist Box for Quick Parent Reference -->
+        <section class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-2.5">
+            <h3 class="font-bold text-xs text-slate-400 uppercase tracking-wider">
+                💡 家長日常叮嚀檢核清單
+            </h3>
+            <div class="space-y-2 text-xs text-slate-700 dark:text-slate-300">
+                <label class="flex items-center space-x-2 cursor-pointer p-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg">
+                    <input type="checkbox" class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                    <span>提醒孩子早餐在家吃完或直接帶進學校，不留校外早餐店。</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer p-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg">
+                    <input type="checkbox" class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                    <span>確保孩子 7:10 後到校，且於 07:30 前順利進教室。</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer p-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg">
+                    <input type="checkbox" class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                    <span>叮嚀孩子手機務必保持「關機」並存放妥當。</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer p-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg">
+                    <input type="checkbox" class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                    <span>提醒放學後立即回家報平安，不於沿途逗留聚集。</span>
+                </label>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center space-x-2">
+        <span id="toastMessage">已複製到剪貼簿！</span>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Font Size Cycling
+        const fontSizes = [
+            { key: 'sm', label: '小' },
+            { key: 'base', label: '中' },
+            { key: 'lg', label: '大' },
+            { key: 'xl', label: '特大' }
+        ];
+        let currentFontIndex = 1;
+
+        function cycleFontSize() {
+            const mainContent = document.getElementById('mainContent');
+            
+            // Remove previous text size class
+            fontSizes.forEach(f => mainContent.classList.remove(`text-size-${f.key}`));
+            
+            currentFontIndex = (currentFontIndex + 1) % fontSizes.length;
+            const newSize = fontSizes[currentFontIndex];
+            
+            mainContent.classList.add(`text-size-${newSize.key}`);
+            document.getElementById('fontLabel').textContent = newSize.label;
+            
+            showToast(`字體已調整為：${newSize.label}`);
+        }
+
+        // Keyword Search & Filter
+        function filterContent() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            const items = document.querySelectorAll('.search-item');
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            filterContent();
+        }
+
+        // Share Notice Text for Parents
+        function shareTextNotice() {
+            const summaryText = 
+`【陽明國中 - 每日作息與生活須知重點摘要】
+1. 上學時間：07:10-07:30 到校，07:30 登記遲到。
+2. 早餐注意事項：請於家中吃完或帶入校內教室食用，請勿在校外早餐店逗留或內用。
+3. 手機規定：全天保持關機。違規保管需由家長攜帶「領取單」親自到校領回。
+4. 放學提醒：放學後請儘速回家報平安，禁止在校外聚集逗留。
+5. 校園維安：學校與陽明派出所及少年隊配合強化周邊巡邏，共同維護學生安全！`;
+
+            // Copy using standard fallback for web view
+            const tempInput = document.createElement("textarea");
+            tempInput.value = summaryText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand("copy");
+                showToast("已成功複製重點文案，可貼上至 LINE 群組！");
+            } catch (err) {
+                showToast("複製失敗，請手動選擇複製");
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+
+        // Default set text size base on load
+        document.getElementById('mainContent').classList.add('text-size-base');
+    </script>
+</body>
+</html>

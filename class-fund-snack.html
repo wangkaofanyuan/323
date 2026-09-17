@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陽明國中 3年23班 - 班費與第八節點心運作現況報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Dynamic Font Sizes for Accessibility */
+        .text-size-sm {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .text-size-base {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .text-size-lg {
+            font-size: 1.20rem;
+            line-height: 1.75;
+        }
+
+        .text-size-xl {
+            font-size: 1.35rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-20 transition-colors duration-200">
+
+        <div class="bg-slate-900 text-center py-1.5">
+        <a href="index.html" class="text-[11px] font-bold text-slate-300 hover:text-white inline-flex items-center gap-1 transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"></path></svg>
+            返回班親會資訊平台首頁
+        </a>
+    </div>
+<header
+        class="sticky top-0 z-50 bg-white/95 dark:bg-slate-800/95 backdrop-blur shadow-sm border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <div
+                    class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-base shadow shrink-0">
+                    陽
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-slate-900 dark:text-white leading-tight">3年23班 班務與點心報告</h1>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">陽明國中 ‧ 家長手機閱讀專頁</p>
+                </div>
+            </div>
+
+            <!-- Controls: Font Size & Dark Mode -->
+            <div class="flex items-center space-x-1.5">
+                <button id="fontBtn" onclick="cycleFontSize()"
+                    class="px-2.5 py-1 text-xs font-bold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition flex items-center space-x-1"
+                    title="切換字體大小">
+                    <span>字級:</span>
+                    <span id="fontLabel" class="text-emerald-600 dark:text-emerald-400 font-extrabold">中</span>
+                </button>
+                <button onclick="toggleDarkMode()"
+                    class="p-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200 dark:border-slate-600 transition"
+                    title="切換深色/淺色模式">
+                    <svg id="moonIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <svg id="sunIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-4 pt-4 space-y-4" id="mainContent">
+
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="搜尋關鍵字 (如：班費、點心、預扣、園遊會)..."
+                class="w-full pl-9 pr-8 py-2.5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+            <button id="clearSearchBtn" onclick="clearSearch()"
+                class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs font-bold">
+                ✕
+            </button>
+        </div>
+
+        <!-- Intro Banner -->
+        <div
+            class="bg-gradient-to-br from-emerald-600 via-teal-700 to-emerald-800 text-white rounded-2xl p-4 shadow-md space-y-2 relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-2xl pointer-events-none">
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 bg-white/20 rounded-full text-[11px] font-semibold backdrop-blur">導師信函</span>
+                <span class="text-xs text-emerald-100">致 3年23班 家長</span>
+            </div>
+            <h2 class="text-base font-bold leading-snug pt-0.5">
+                班級公費與第八節點心運作現況報告
+            </h2>
+            <p class="text-xs text-emerald-50 leading-relaxed pt-1 border-t border-emerald-500/50">
+                孩子們正式進入國三，各科複習進度與模擬考接踵而來，校園生活節奏明顯緊湊許多。導師會持續引導孩子穩定步調，專心面對課業挑戰！趁著開學各項事務就緒，向各位家長清楚報告並回顧現況。
+            </p>
+        </div>
+
+        <!-- 4 Grid Highlights -->
+        <div class="grid grid-cols-2 gap-2 text-xs">
+            <div
+                class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">🎪</span>
+                <div>
+                    <div class="font-bold text-emerald-900 dark:text-emerald-200 text-xs">園遊會結餘入班費</div>
+                    <div class="text-[11px] text-emerald-700 dark:text-emerald-400">專款專用 ‧ 全班共享</div>
+                </div>
+            </div>
+            <div
+                class="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">🥐</span>
+                <div>
+                    <div class="font-bold text-blue-900 dark:text-blue-200 text-xs">使用者付費訂購</div>
+                    <div class="text-[11px] text-blue-700 dark:text-blue-400">4/24起常態自主運作</div>
+                </div>
+            </div>
+            <div
+                class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">💳</span>
+                <div>
+                    <div class="font-bold text-amber-900 dark:text-amber-200 text-xs">預扣額度自動折抵</div>
+                    <div class="text-[11px] text-amber-700 dark:text-amber-400">贊助結餘逐週扣抵</div>
+                </div>
+            </div>
+            <div
+                class="bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 p-2.5 rounded-xl flex items-center space-x-2">
+                <span class="text-lg">🍪</span>
+                <div>
+                    <div class="font-bold text-purple-900 dark:text-purple-200 text-xs">教室常備小點心</div>
+                    <div class="text-[11px] text-purple-700 dark:text-purple-400">全班隨時免費享用</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 收支公告連結按鈕 (New Button) -->
+        <a href="https://script.google.com/macros/s/AKfycbymOACDlN2bSgTICzeW9_L169EdQy9aBqQ_cyyAlPWdfaUAqk6Wq1jV3vD_F2GT5g7KrQ/exec"
+            target="_blank" rel="noopener noreferrer"
+            class="block w-full bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white rounded-xl p-3 shadow-md hover:shadow-lg active:scale-[0.98] transition-all">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white/20 p-2 rounded-lg shrink-0 backdrop-blur-sm">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-bold text-sm tracking-wide">班費與點心費收支公告</div>
+                        <div class="text-[11px] text-teal-100 font-medium">點擊查看最新線上明細 (即時更新)</div>
+                    </div>
+                </div>
+                <div class="bg-white/10 p-1.5 rounded-full mr-1">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </div>
+            </div>
+        </a>
+
+        <!-- Section 1 -->
+        <section
+            class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-2.5 search-item">
+            <div class="flex items-center space-x-2 border-b border-slate-100 dark:border-slate-700/60 pb-2">
+                <span
+                    class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 font-bold text-xs flex items-center justify-center shrink-0">一</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">園遊會成果與班費運用</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                非常感謝大家在二年級校慶園遊會時的大力相挺與贊助！攤位扣除材料與營運成本後的結餘，已<strong class="text-emerald-700 dark:text-emerald-400">全數納入三年
+                    23 班的班級公費</strong>。
+            </p>
+
+            <div
+                class="bg-slate-50 dark:bg-slate-700/40 p-3 rounded-xl text-xs space-y-1.5 border border-slate-200/60 dark:border-slate-600/50">
+                <div class="font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                    <span class="mr-1.5">💡</span> 落實「專款專用、全班共享」用途：
+                </div>
+                <ul class="space-y-1 text-slate-600 dark:text-slate-300 pl-1">
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-1.5">•</span>
+                        <span>國三這一年孩子們各項複習備品採購</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-1.5">•</span>
+                        <span>班級公共文具補充</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-1.5">•</span>
+                        <span>模擬考成績獎勵與進步獎品</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-1.5">•</span>
+                        <span>日常班務與公務支出</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section
+            class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-3 search-item">
+            <div class="flex items-center space-x-2 border-b border-slate-100 dark:border-slate-700/60 pb-2">
+                <span
+                    class="w-6 h-6 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 font-bold text-xs flex items-center justify-center shrink-0">二</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">第八節點心運作現況與感謝</h3>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                國三第八節課時間長且腦力消耗大，課前適度的能量補充，有助於孩子維持下半天的體力與專注度。
+            </p>
+
+            <!-- Card 2A: Gratitude -->
+            <div
+                class="bg-amber-50/90 dark:bg-amber-950/30 p-3 rounded-xl border border-amber-200/80 dark:border-amber-900/40 space-y-1 text-xs">
+                <div class="font-bold text-amber-900 dark:text-amber-200 flex items-center">
+                    <span class="mr-1.5">❤️</span> 深深感謝 4/24 前慷慨解囊的家長們
+                </div>
+                <p class="text-amber-800 dark:text-amber-300 leading-relaxed">
+                    在計畫推動之初，多虧有熱心家長的贊助與支持，點心計畫才能順利起步。這份照顧孩子的心意，老師與孩子們都非常感謝！
+                </p>
+            </div>
+
+            <!-- Card 2B: User Pays Mode -->
+            <div
+                class="bg-blue-50/90 dark:bg-blue-950/30 p-3 rounded-xl border border-blue-200/80 dark:border-blue-900/40 space-y-1.5 text-xs">
+                <div class="font-bold text-blue-900 dark:text-blue-200 flex items-center">
+                    <span class="mr-1.5">🛒</span> 4/24 起啟動「使用者付費」常態運作
+                </div>
+                <p class="text-blue-800 dark:text-blue-300 leading-relaxed">
+                    自今年 4/24 起，點心制度已正式轉為<strong class="underline font-bold">「使用者付費、自主訂購」</strong>模式。目前全班有 <strong>4
+                        位同學</strong>依個人需求或習慣自行準備，其餘同學皆穩定參與訂購。
+                </p>
+            </div>
+
+            <!-- Card 2C: Deductible credit & Privacy -->
+            <div
+                class="bg-purple-50/90 dark:bg-purple-950/30 p-3 rounded-xl border border-purple-200/80 dark:border-purple-900/40 space-y-2 text-xs">
+                <div class="font-bold text-purple-900 dark:text-purple-200 flex items-center">
+                    <span class="mr-1.5">🔒</span> 贊助結餘之「預扣額度」折抵說明
+                </div>
+                <p class="text-purple-800 dark:text-purple-300 leading-relaxed">
+                    先前熱心贊助點心與活動的家長，老師已將結餘按比例轉為孩子個人專屬的<strong
+                        class="text-purple-950 dark:text-purple-100 font-bold">「預扣額度」</strong>，在孩子參與訂購時逐週自動折抵，直至額度扣抵完畢為止。
+                </p>
+                <div
+                    class="p-2.5 bg-white/80 dark:bg-slate-800/80 rounded-lg text-[11px] text-purple-900 dark:text-purple-200 border border-purple-100 dark:border-purple-800/50 leading-relaxed">
+                    📌 <strong>家庭隱私保護說明：</strong> 因考量個別贊助金額涉及家庭隱私，群組內不公開個人明細。剩餘額度老師會個別向孩子告知，請大家放心。
+                </div>
+            </div>
+
+            <!-- Card 2D: Free snacks for classroom -->
+            <div
+                class="bg-emerald-50/90 dark:bg-emerald-950/30 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-900/40 space-y-1.5 text-xs">
+                <div class="font-bold text-emerald-900 dark:text-emerald-200 flex items-center">
+                    <span class="mr-1.5">🍪</span> 沒外訂點心時的「教室常備小點心」
+                </div>
+                <p class="text-emerald-800 dark:text-emerald-300 leading-relaxed">
+                    考量點心並非每個上課日都有固定品項訂購，在沒有安排外訂點心的日子裡，老師會<strong class="font-bold">運用班級公費採購大包裝的批發餅乾放在教室</strong>。
+                </p>
+                <p class="text-emerald-700 dark:text-emerald-400 font-medium leading-relaxed">
+                    ✨ 全班每一位同學（包含未參加外訂點心的同學）都能在肚子餓時自由享用、補充元氣，照顧到班上每一位孩子！
+                </p>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <div
+            class="bg-slate-800 text-white dark:bg-slate-800/90 rounded-2xl p-4 shadow-sm text-center space-y-2 border border-slate-700">
+            <div class="text-2xl">🤝</div>
+            <p class="text-xs text-slate-200 font-medium leading-relaxed px-2">
+                「面對國三的各項考驗，感謝家長們一路以來的配合與信任，我們一起在背後穩穩接住孩子，給他們最需要的支持！」
+            </p>
+            <div class="text-[11px] text-emerald-400 font-bold">— 3年23班 導師謹啟</div>
+        </div>
+
+        <button onclick="shareSnackNotice()"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3 px-4 rounded-xl shadow transition flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                </path>
+            </svg>
+            <span>複製點心與班費報告摘要至 LINE 群組</span>
+        </button>
+
+    </main>
+
+    <!-- Bottom Toast Alert -->
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/95 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center space-x-2">
+        <span id="toastMessage">已複製到剪貼簿！</span>
+    </div>
+
+    <script>
+        // Toggle Light & Dark Mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Font Size Cycling Functionality
+        const fontSizes = [
+            { key: 'sm', label: '小' },
+            { key: 'base', label: '中' },
+            { key: 'lg', label: '大' },
+            { key: 'xl', label: '特大' }
+        ];
+        let currentFontIndex = 1;
+
+        function cycleFontSize() {
+            const mainContent = document.getElementById('mainContent');
+
+            fontSizes.forEach(f => mainContent.classList.remove(`text-size-${f.key}`));
+            currentFontIndex = (currentFontIndex + 1) % fontSizes.length;
+            const newSize = fontSizes[currentFontIndex];
+
+            mainContent.classList.add(`text-size-${newSize.key}`);
+            document.getElementById('fontLabel').textContent = newSize.label;
+
+            showToast(`字體已調整為：${newSize.label}`);
+        }
+
+        // Search & Keyword Filter Logic
+        function filterContent() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            const items = document.querySelectorAll('.search-item');
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            filterContent();
+        }
+
+        // Copy Text Function for LINE sharing
+        function shareSnackNotice() {
+            const snackText =
+                `【陽明國中 3年23班 班級公費與第八節點心運作現況說明】
+一、園遊會成果與班費運用：
+園遊會攤位結餘已全數納入班級公費，專款專用於孩子國三複習備品、公共文具、模考獎勵與班務（專款專用、全班共享）。
+
+二、第八節點心運作現況：
+1. 感謝支持：感謝 4/24 前熱心贊助讓計畫順利啟動。
+2. 使用者付費：4/24 起轉為「使用者付費、自主訂購」（4位同學自行準備，其餘穩定參與）。
+3. 預扣額度折抵：先前贊助結餘已轉為個人專屬預扣額度逐週自動折抵（涉及隱私不公開明細，老師個別告知孩子）。
+4. 教室常備小點心：無外訂點心日，導師運用班級公費採購大包裝餅乾放教室，全班同學皆可自由享用補充元氣！
+
+👉 【點此查看：班費點心費收支即時明細】
+https://script.google.com/macros/s/AKfycbymOACDlN2bSgTICzeW9_L169EdQy9aBqQ_cyyAlPWdfaUAqk6Wq1jV3vD_F2GT5g7KrQ/exec
+
+面對國三考驗，感謝家長們一路以來的配合與信任！`;
+
+            copyTextToClipboard(snackText, "已成功複製點心與班費報告，可直接貼上至 LINE 群組！");
+        }
+
+        function copyTextToClipboard(text, successMsg) {
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand("copy");
+                showToast(successMsg);
+            } catch (err) {
+                showToast("複製失敗，請手動選取複製");
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Show Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+
+        // Set Base Text Size on Load
+        document.getElementById('mainContent').classList.add('text-size-base');
+    </script>
+</body>
+
+</html>
